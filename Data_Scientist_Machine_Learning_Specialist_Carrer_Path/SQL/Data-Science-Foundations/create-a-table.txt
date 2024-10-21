@@ -1,0 +1,119 @@
+-- Tasks
+-- 9/9 complete
+-- Mark the tasks as complete by checking them off
+-- 1.
+-- Create a table named friends with three columns:
+
+-- id that stores INTEGER
+-- name that stores TEXT
+-- birthday that stores DATE
+-- Stuck? Get a hint
+-- 2.
+-- Beneath your current code, add Ororo Munroe to friends.
+
+-- Her birthday is May 30th, 1940.
+
+-- Stuck? Get a hint
+-- 3.
+-- Let’s make sure that Ororo has been added to the database:
+
+-- SELECT * 
+-- FROM friends;
+
+-- Check for two things:
+
+-- Is friends table created?
+-- Is Ororo Munroe added to it?
+-- Stuck? Get a hint
+-- 4.
+-- Let’s move on!
+
+-- Add two of your friends to the table.
+
+-- Insert an id, name, and birthday for each of them.
+
+-- Stuck? Get a hint
+-- 5.
+-- Ororo Munroe just realized that she can control the weather and decided to change her name. Her new name is “Storm”.
+
+-- Update her record in friends.
+
+-- Hint
+-- The UPDATE statement is used to modify the existing records in a table:
+
+-- UPDATE table_name
+-- SET column1 = value1
+-- WHERE condition;
+
+-- Your code should look something like:
+
+-- UPDATE friends
+-- SET name = 'Storm'
+-- WHERE id = 1;
+
+-- 6.
+-- Add a new column named email.
+
+-- Stuck? Get a hint
+-- 7.
+-- Update the email address for everyone in your table.
+
+-- Storm’s email is storm@codecademy.com.
+
+-- Stuck? Get a hint
+-- 8.
+-- Wait, Storm is fictional…
+
+-- Remove her from friends.
+
+-- Stuck? Get a hint
+-- 9.
+-- Great job! Let’s take a look at the result one last time:
+
+-- SELECT * 
+-- FROM friends;
+
+
+CREATE TABLE friends (
+   id INTEGER, 
+   name TEXT, 
+   birthday DATE
+);
+
+-- Insert initial records
+INSERT INTO friends (id, name, birthday) 
+VALUES (1, 'Ororo Munroe', '1940-05-30');
+
+INSERT INTO friends (id, name, birthday) 
+VALUES (2, 'Kate', '1940-06-30');
+
+INSERT INTO friends (id, name, birthday) 
+VALUES (3, 'Jayson', '1940-07-30');
+
+-- Update the name for id 1
+UPDATE friends 
+SET name = 'Storm'
+WHERE id = 1;
+
+-- Add a new column 'email'
+ALTER TABLE friends 
+ADD COLUMN email TEXT;
+
+-- Insert emails for existing records
+UPDATE friends
+SET email = 'storm@codecademy.com'
+WHERE id = 1;
+
+UPDATE friends
+SET email = NULL
+WHERE id = 2;
+
+UPDATE friends
+SET email = NULL
+WHERE id = 3;
+
+DELETE FROM friends 
+WHERE email IS 'storm@codecademy.com';
+
+-- Select all records to view the table
+SELECT * FROM friends;

@@ -1,0 +1,78 @@
+Why Learn SQL?
+Creating Usage Funnels
+3 min
+Visitors to Codecademy’s website follow a simple workflow:
+
+Browse items available for sale
+Click an icon to begin the checkout process
+Enter payment information to complete their purchase
+Not all users who browse on the website will find something that they like enough to checkout, and not all users who begin the checkout process will finish entering their payment information to make a purchase.
+
+This type of multi-step process where some users leave at each step is called a funnel.
+
+Catherine wants to determine what percent of users make it through each step of the funnel so that she can recommend improvements to Codecademy’s website.
+
+Instructions
+Checkpoint 1 Passed
+1.
+Catherine is going to combine data from three different tables:
+
+browse - gives the timestamps of users who visited different item description pages
+checkout - gives the timestamps of users who visited the checkout page
+purchase - gives the timestamps of when users complete their purchase
+Using SQL, she finds that 24% of all users who browse move on to checkout. 89% of those who reach checkout purchase.
+
+Click Run, to see Catherine’s analysis.
+
+
+
+Code**********
+
+ SELECT ROUND(
+   100.0 * COUNT(DISTINCT c.user_id) /
+   COUNT(DISTINCT b.user_id)
+ ) AS browse_to_checkout_percent,
+ ROUND(
+   100.0 * COUNT(DISTINCT p.user_id) /
+   COUNT(DISTINCT c.user_id)
+ ) AS checkout_to_purchase_percent
+ FROM browse b
+ LEFT JOIN checkout c
+ 	ON b.user_id = c.user_id
+ LEFT JOIN purchase p
+ 	ON c.user_id = p.user_id;
+
+**************************
+
+
+
+Output
+
+Query Results
+browse_to_checkout_percent	checkout_to_purchase_percent
+24.0	89.0
+Database Schema
+browse
+name	type
+user_id	TEXT
+browse_date	TEXT
+item_id	INTEGER
+Rows: 2352
+items
+name	type
+id	INTEGER
+item	TEXT
+price	REAL
+Rows: 33
+checkout
+name	type
+user_id	TEXT
+checkout_date	TEXT
+item_id	INTEGER
+Rows: 539
+purchase
+name	type
+user_id	TEXT
+purchase_date	TEXT
+item_id	INTEGER
+Rows: 472

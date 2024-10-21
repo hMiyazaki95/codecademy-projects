@@ -1,0 +1,63 @@
+Select
+3 min
+SELECT statements are used to fetch data from a database. In the statement below, SELECT returns all data in the name column of the celebs table.
+
+SELECT name FROM celebs;
+
+1. 
+Preview: Docs Loading link description
+SELECT
+ is a clause that indicates that the statement is a query. You will use SELECT every time you query data from a database.
+2. name specifies the column to query data from.
+3. FROM celebs specifies the name of the table to query data from. In this statement, data is queried from the celebs table.
+
+You can also query data from all columns in a table with SELECT.
+
+SELECT * FROM celebs;
+
+* is a special wildcard character that we have been using. It allows you to select every column in a table without having to name each one individually. Here, the result set contains every column in the celebs table.
+
+SELECT statements always return a new table called the result set.
+
+Instructions
+Checkpoint 1 Passed
+1.
+Let’s take a closer look at SELECT and retrieve all the names in the celebs table. In the code editor, type:
+
+SELECT name FROM celebs; 
+
+Stuck? Get a hint
+Checkpoint 2 Passed
+2.
+Delete your previous SELECT statement from the code editor.
+
+To SELECT all the data in the celebs table, enter the following statement in the code editor using the * wildcard character:
+
+SELECT * FROM celebs;
+
+
+
+
+SELECT name FROM celebs;
+SELECT * FROM celebs;
+
+
+
+Query Results
+name
+Justin Bieber
+Beyonce Knowles
+Jeremy Lin
+Taylor Swift
+id	name	age
+1	Justin Bieber	29
+2	Beyonce Knowles	42
+3	Jeremy Lin	35
+4	Taylor Swift	33
+Database Schema
+celebs
+name	type
+id	INTEGER
+name	TEXT
+age	INTEGER
+Rows: 4

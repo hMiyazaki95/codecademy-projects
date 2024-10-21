@@ -1,0 +1,40 @@
+Determining Web Traffic Attribution
+1 min
+Catherine’s boss asks her to analyze how users are finding Codecademy’s websites using UTM Parameters. UTM Parameters are special tags that site owners add to their pages to track what website a user was on before they reach the website. For instance:
+
+If a user found Codecademy’s website through Google search, the table page_visits might have utm_source set to ‘google’.
+If a different user clicked a Facebook ad to get to Codecademy’s website, then their row in page_visits might have utm_source as ‘facebook’.
+Instructions
+Checkpoint 1 Enabled
+1.
+Catherine wants to know how many visits come from each utm_source.
+
+Click Run, to see Catherine’s analysis.
+
+What is the most common source of traffic to Codecademy’s website?
+
+
+SELECT utm_source,
+ 	COUNT(DISTINCT user_id) AS num_users
+FROM page_visits
+GROUP BY 1
+ORDER BY 2 DESC;
+
+
+Query Results
+utm_source	num_users
+nytimes	747
+email	696
+buzzfeed	648
+medium	625
+facebook	445
+google	339
+Database Schema
+page_visits
+name	type
+page_name	TEXT
+timestamp	TEXT
+user_id	INTEGER
+utm_campaign	TEXT
+utm_source	TEXT
+Rows: 5692
