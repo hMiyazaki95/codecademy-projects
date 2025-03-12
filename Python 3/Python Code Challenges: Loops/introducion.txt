@@ -1,0 +1,31 @@
+Python Code Challenges: Loops
+Python Code Challenges involving loops.
+
+This lesson will help you review Python loops by providing some challenge exercises involving loops.
+
+Some of these challenges are difficult! Take some time to think about them before starting to code.
+
+You might not get the solution correct on your first try — look at your output, try to find where you’re going wrong, and iterate on your solution.
+
+Finally, if you get stuck, use our solution code! If you “Check Answer” twice with an incorrect solution, you should see an option to get our solution code. However, truly investigate that solution — experiment and play with the solution code until you have a good grasp of how it is working. Good luck!
+
+Function and Loop Syntax
+As a refresher, function syntax looks like this:
+
+def some_function(some_input1, some_input2):
+  … do something with the inputs …
+  return output
+
+For example, a function that prints all odd numbers in a list would look like this:
+
+def odd_nums(my_list):
+  for item in my_list:
+    if item % 2 == 1:
+      print(item)
+
+And this would produce output like:
+
+>>> odd_nums([4, 7, 9, 10, 13])
+7
+9
+13
